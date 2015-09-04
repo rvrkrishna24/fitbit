@@ -1,0 +1,33 @@
+<div class = "bg_image">
+
+<section>
+	<div class="container text-center">		
+		<h3 class="text-warning"> Hi {{uname}}! <i class="fa fa-user" id ="user"></i> </h3>
+		<button type="submit" class="btn btn-warning pull-right" ng-click="logout()" ui-sref="logout">
+	    	<span class="fa fa-power-off"></span> Logout</button>
+		<div class="row" >
+			<div ui-view></div>
+		</div>
+
+		<div class="row">				
+			<nav class="navbar navbar-inverse navbar-fixed-bottom">
+			  <div>
+				  <ul class="nav navbar-nav col-xs-12">
+				  	
+					<li class="col-xs-3 text-center"><a ui-sref-active="active" ui-sref="home">
+						<i class="fa fa-home"></i> Home</a></li>
+					<li class="col-xs-3 text-center"><a ui-sref-active="active"  ui-sref="home.plan">
+						<i class="fa fa-calendar"></i> Plan</a></li>
+					<li class="col-xs-3 text-center"><a ui-sref-active="active"  ui-sref="home.train">
+						<i class="fa fa-train"></i> Train</a></li>
+					<li class="col-xs-3 text-center"><a ui-sref-active="active"  ui-sref="home.analyze">
+						<i class="fa fa-share"></i> Analyze</a></li>
+					
+
+				  </ul>
+				</div>
+			</nav>		
+		</div>
+	</div>
+</section>
+</div>

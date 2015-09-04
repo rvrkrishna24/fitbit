@@ -1,0 +1,18 @@
+<center>
+	<br>
+	<div class = "train_style">
+		<div ng-hide="activityDet.distance"> <h3>Click to load Data!!</h3></div>
+		<div ng-hide="!activityDet.distance"> <h3>Activity Graph for {{activityDet.name}}</h3></div>
+	    <canvas id="doughnut" class="chart chart-doughnut" data="data" labels="labels" legend="true"></canvas> 
+	</div>
+
+  	<span ng-repeat="data in workouts">
+  		<button class="btn btn-primary" ng-click="activity(data.name)">{{data.name}}</button>
+  	</span>
+
+  	<div class="text-warning" ng-show="data">
+  		<b><h5> Planned: {{activityDet.distance.plan}} Kms ({{activityDet.duration.plan}} hrs), <br> Trained: {{activityDet.distance.train}} Kms ({{activityDet.duration.train}} hrs)</h5></b>
+  	</div>
+<!--   	<button class="btn btn-primary" ng-click="share()">Share</button>
+ -->	<div><h3> {{info}} </h3></div>
+</center>

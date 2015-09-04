@@ -1,0 +1,22 @@
+<section>
+	<ul class="list-group">
+		<li class="list-group-item row" 
+			ng-repeat="item in workoutsEdit"
+			ng-class="{'disabled': $index % 2 == 0}"
+			>
+			<div class="text-primary col-xs-3 text-left"> <b> {{item.name}} </b></div>
+			<div class="col-xs-3">
+				<input type='text' ng-model="item.distance.plan" class="form-control">
+			</div>
+			<div class="col-xs-3">
+				<input type='text' ng-model="item.duration.plan" class="form-control">
+			</div>
+			<div class="col-xs-1" ng-show="!edit">
+				<i class="fa fa-times btn btn-sm btn-danger" ng-click="deleteRow(item.name)"></i>
+			</div>	
+			<div class="col-xs-1" ng-show="edit">
+				<i class="fa fa-check btn btn-sm btn-success" ng-click="save($index)"></i>
+			</div>	
+		</li>
+	</ul>
+</section>

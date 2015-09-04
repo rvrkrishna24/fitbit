@@ -1,0 +1,83 @@
+
+
+
+<div id = "login-content" class = "login_class">
+    <section>
+        <ul ng-init="tab = 1">
+            <li ng-class="{active:tab===1}">
+                <a href ng-click="tab = 1;tabChange('tab1')"><i class="fa fa-lock"></i>&nbsp;&nbsp;Login Panel</a>
+            </li>
+            <li ng-class="{active:tab===2}">
+                <a href ng-click="tab = 2;tabChange('tab2')"><i class="fa fa-user"></i>&nbsp;&nbsp;Register Panel</a>
+            </li>
+            <li ng-class="{active:tab===3}">
+                <a href ng-click="tab = 3;tabChange('tab3')"><i class="fa fa-key"></i>&nbsp;&nbsp;Forgot Password</a>
+            </li>
+            <li ng-class="{active:tab===4}">
+                <a href ng-click="tab = 4;tabChange('tab4')"><i class="fa fa-envelope"></i>&nbsp;&nbsp;Contact Us</a>
+            </li>
+            <br>
+            <br>
+
+            <div ng-show="tab === 1">
+                <div class="wrapper">
+                <div ng-show="error" class="alert alert-danger">{{errorMessage}}</div>
+                    <form class="form-signin" ng-submit="login()">
+                        <label class="form-signin-heading signinlabel"><i class="fa fa-lock"></i>&nbsp;&nbsp;Login Here</label>
+                        <input type="text" class="form-control" name="username" placeholder="Email Address" ng-model="loginForm.username" required="" autofocus="" />
+                        <input type="password" class="form-control passwordBox" name="password" placeholder="Password" ng-model="loginForm.password" required="" />
+                        <button class="btn-primary btnSubmit" id="signInUrl" type="submit">Login</button>
+                    </form>
+                </div>
+            </div>
+
+
+
+            <div ng-show="tab === 2">
+                <div class="wrapper">
+                <div ng-show="error" class="alert alert-danger">{{errorMessage}}</div>
+                <div ng-show="success" class="alert alert-success">{{registerSuccessMsg}}</div>
+                    <form class="form-signin" ng-submit="register()">
+                        <label class="form-signin-heading signinlabel"><i class="fa fa-user"></i>&nbsp;&nbsp;Register Here</label>
+                        <input type="text" class="form-control" name="username" placeholder="Email Address" ng-model="registerForm.username" required="" autofocus="" />
+                        <br>
+                        <input type="password" class="form-control passwordBox" name="password" placeholder="Password" ng-model="registerForm.password" required="" />
+                        
+                        <br>
+                        <button class="btn-primary btnSubmit" type="submit">Register Now</button>
+                    </form>
+                </div>
+             </div>
+            <div ng-show="tab === 3">
+                <div class="wrapper">
+                    <form class="form-signin">
+                        <label class="form-signin-heading signinlabel"><i class="fa fa-key"></i>&nbsp;&nbsp;Forgot Password</label>
+                        <input type="text" class="form-control" name="username" placeholder="Email Address" required="" autofocus="" />
+                        <br>
+                        <button class="btn-primary btnSubmit" type="submit">Recover Password</button>
+                    </form>
+                </div>
+            </div>
+            <div ng-show="tab === 4">
+                <div class="wrapper">
+                    <form class="form-signin">
+                        <label class="form-signin-heading signinlabel"><i class="fa fa-envelope"></i>&nbsp;&nbsp;Contact Us</label>
+                        <label>No. 18/1, Outer Ring Road,</label><label>Panathur Post, Bengaluru,</label><br />
+                         <label>Karnataka 560103</label><br />
+                        <label>Phone:080 4106 7000</label>
+                    </form>
+                </div>
+            </div>
+            <center>
+
+                <a href="/fblogin" class="btn btn-primary"><span class="fa fa-facebook fa-5x"></span>Facebook</a>
+            
+                <a href="/googlelogin" class="btn btn-warning"><span class="fa fa-google fa-5x"></span> Google</a>
+          
+
+
+            </center>
+             
+        </ul>
+    </section>
+</div>

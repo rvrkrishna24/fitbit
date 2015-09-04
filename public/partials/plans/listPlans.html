@@ -1,0 +1,28 @@
+<section>	
+	<div class="row" ng-show="workouts.length">
+		<div class = "col-xs-12 text-left">
+			<button class="btn btn-sm btn-info" ui-sref="home.plan.edit" ng-click="enableEdit(true)">
+				<i class="fa fa-edit"> Edit</i>
+			</button>	
+			<button class="btn btn-sm btn-danger" ui-sref="home.plan.edit" ng-click="enableEdit(false)">
+				<i class="fa fa-times"> Delete</i>
+			</button>
+		</div>
+	</div>
+	<br>
+	<ul class="list-group">
+		<li class="list-group-item" ng-repeat="workout in workouts" 
+			ng-class="{'disabled': $index % 2 == 0}"
+			ng-click="moreInfo($index)"> 
+			<b><span class="col-xs-2"><img class = "imgClass"
+				ng-src="images/{{workout.image}}"></span>
+			<span class="col-xs-4">{{workout.name}}</span>
+			<span class="col-xs-3">{{workout.distance.plan}} Km</span>
+			<span class="col-xs-3">{{workout.duration.plan}} Hr</span>
+			<span class="clearfix"></span></b>
+		</li>
+	</ul>	
+	<div ng-show="info">
+		<h3> {{info}} </h3>
+	</div>
+</section>	

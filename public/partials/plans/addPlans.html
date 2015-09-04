@@ -1,0 +1,51 @@
+<section>
+	<div class="row text-center">
+		<div class="col-md-4 col-md-offset-4">
+				<div class="col-xs-6 text-right">
+					<label class="lbl-backcolor">Day:</label>
+				</div>
+				<div class="col-xs-6">	
+					<select class="form-control" ng-model="selectedDay" ng-options="day for day in days"><option></option></select>
+				</div>
+		 </div>
+	</div><br>
+
+	
+	<div class="row text-center">
+		<div class="col-md-4 col-md-offset-4">
+				<div class="col-xs-6 text-right">
+					<label class="lbl-backcolor">Activity:</label>
+				</div>
+				<div class="col-xs-6">	
+					<select class="form-control" ng-model="selectedActivity" ng-options="activity for activity in activities"><option></option></select>
+				</div>
+		 </div>
+	</div><br>
+
+	<div class="row text-center">
+		<div class="col-md-4 col-md-offset-4">
+				<div class="col-xs-6 text-right">
+					<label class="lbl-backcolor">Distance(Kms):</label>
+				</div>
+			
+				<div class="col-xs-6">	
+					<input class="form-control" value="0" min="0" type="number" ng-model="selectedDistance">
+				</div>
+		 </div>
+	</div><br>
+
+	<div class="row">
+		<div class="col-md-4 col-md-offset-4">
+				<div class="col-xs-6 text-right">
+					<label class="lbl-backcolor">Duration(Hrs):</label>
+				</div>
+			
+				<div class="col-xs-6">	
+					<input class="form-control" value="0" min="0" type="number" ng-model="selectedDuration">
+				</div>
+		 </div>
+	</div><br>
+	
+	<button type="button" class="btn btn-primary" ng-click="add()">Add Plans</button><br>
+	<div class="text-warning" ng-show="info">{{info}}</div>
+</section>
